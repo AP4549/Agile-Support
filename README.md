@@ -1,73 +1,220 @@
-# Welcome to your Lovable project
+# Agile AI Support Desk
 
-## Project info
+A modern, AI-powered support desk application that combines agile project management with intelligent ticket handling. Built with React, TypeScript, and Ollama integration for AI features.
 
-**URL**: https://lovable.dev/projects/dd772934-4ece-426c-a8d7-043f069ff7c2
+## 🌟 Features
 
-## How can I edit this code?
+### Dashboard
+- Real-time ticket statistics and metrics
+- Interactive charts showing ticket distribution by category and priority
+- Recent ticket activity feed
+- AI agent status monitoring
+- Performance metrics including resolution times and trends
 
-There are several ways of editing your application.
+### Ticket Management
+- Comprehensive ticket lifecycle management
+- Advanced filtering and search capabilities
+- Priority-based ticket organization
+- Category-based classification
+- Real-time status updates
+- Detailed ticket history tracking
 
-**Use Lovable**
+### AI-Powered Features
+- *Sentiment Analysis*: Analyzes customer ticket sentiment
+- *Smart Routing*: Automatically assigns tickets to appropriate teams
+- *Time Estimation*: Predicts resolution time for tickets
+- *Recommendations*: Suggests solutions based on historical data
+- *Action Planning*: Generates step-by-step resolution plans
+- *Ticket Summarization*: Creates concise summaries of lengthy tickets
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/dd772934-4ece-426c-a8d7-043f069ff7c2) and start prompting.
+### Analytics
+- Ticket distribution visualization
+- Priority-based analytics
+- Resolution time tracking
+- Team performance metrics
+- Customer satisfaction tracking
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠 Tech Stack
 
-**Use your preferred IDE**
+### Frontend
+- *Core*: React 18 with TypeScript
+- *Build Tool*: Vite
+- *UI Components*: shadcn-ui (Radix UI)
+- *Styling*: Tailwind CSS
+- *State Management*: TanStack Query (React Query)
+- *Charts*: Recharts
+- *Forms*: React Hook Form + Zod
+- *Routing*: React Router DOM
+- *Notifications*: Sonner
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Backend
+- *Framework*: Flask (Python)
+- *AI Integration*: Ollama
+- *LLM Support*: Default model - llama3
+- *API*: RESTful endpoints
+- *CORS*: Enabled for cross-origin requests
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📦 Prerequisites
 
-Follow these steps:
+- Node.js (Latest LTS version)
+- Python 3.8+
+- Ollama installed locally
+- npm or bun package manager
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🚀 Getting Started
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1. *Clone the repository*
+bash
+git clone https://github.com/AP4549/Agile-Support.git
+cd Agile-Support
 
-# Step 3: Install the necessary dependencies.
-npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+2. *Frontend Setup*
+bash
+# Install dependencies
+npm install
+# or
+bun install
+
+# Start development server
 npm run dev
-```
+# or
+bun run dev
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+3. *Backend Setup*
+bash
+cd backend
 
-**Use GitHub Codespaces**
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Install dependencies
+pip install -r requirements.txt
 
-## What technologies are used for this project?
+# Start the server
+python app.py
 
-This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+4. *Ollama Setup*
+bash
+# Pull the default model
+ollama pull llama3
 
-## How can I deploy this project?
+# Ensure Ollama is running at http://localhost:11434
 
-Simply open [Lovable](https://lovable.dev/projects/dd772934-4ece-426c-a8d7-043f069ff7c2) and click on Share -> Publish.
 
-## Can I connect a custom domain to my Lovable project?
+## 🔧 Configuration
 
-Yes it is!
+### Environment Variables
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Create a .env file in the root directory:
+env
+# Frontend
+VITE_API_URL=http://localhost:5000
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+# Backend
+OLLAMA_URL=http://localhost:11434
+OLLAMA_MODEL=llama3
+
+
+### Available Scripts
+
+- npm run dev - Start development server
+- npm run build - Build for production
+- npm run preview - Preview production build
+- npm run lint - Run ESLint
+
+## 📁 Project Structure
+
+### Key Directories and Files
+
+#### Frontend (/src)
+- *components/*: Reusable React components
+  - ui/: Base UI components (buttons, inputs, cards)
+  - dashboard/: Dashboard-specific components (charts, stats)
+  - tickets/: Ticket management components
+  - layout/: Layout and structure components
+- *pages/*: Page components and routing logic
+- *hooks/*: Custom React hooks for shared logic
+- *lib/*: Utility functions and helper methods
+- *types/*: TypeScript type definitions and interfaces
+
+#### Backend (/backend)
+- *agents/*: AI agent implementations
+  - actions_agent.py: Generates action plans
+  - recommendations_agent.py: Provides solution recommendations
+  - router_agent.py: Handles ticket routing
+  - sentiment_analyzer.py: Analyzes ticket sentiment
+  - summarizer_agent.py: Creates ticket summaries
+  - time_estimator.py: Estimates resolution time
+- *data/*: Data management and storage
+- *app.py*: Flask application setup
+- *routes.py*: API endpoint definitions
+- *agent_service.py*: AI agent coordination
+- *ollama_service.py*: Ollama LLM integration
+- *ticket_service.py*: Ticket operations
+- *data_loader.py*: Data loading utilities
+- *utils.py*: Helper functions
+
+#### Configuration Files
+- tsconfig.json: TypeScript compiler options
+- vite.config.ts: Vite bundler configuration
+- tailwind.config.ts: Tailwind CSS customization
+- postcss.config.js: PostCSS processing setup
+- package.json: Project metadata and dependencies
+
+#### Static Assets (/public)
+- Static files served directly by the web server
+- Images, icons, and other media assets
+
+This structure follows a modular architecture that separates concerns between frontend and backend, with clear organization of AI capabilities, UI components, and business logic.
+## 🤖 AI Agents
+
+The application includes several specialized AI agents:
+- *Sentiment Analyzer*: Evaluates ticket tone and urgency
+- *Router Agent*: Determines optimal ticket routing
+- *Time Estimator*: Predicts resolution timeframes
+- *Recommendations Agent*: Suggests solutions
+- *Summarizer Agent*: Creates ticket summaries
+- *Actions Agent*: Generates action plans
+
+## 🎨 Customization
+
+### Theme
+- Customizable through Tailwind configuration
+- Dark/Light mode support
+- Configurable color schemes
+- Custom component styling
+
+### AI Models
+- Configurable through environment variables
+- Supports any Ollama-compatible model
+- Adjustable parameters per agent
+
+## 🔐 Security
+
+- CORS protection
+- Environment variable management
+- Secure API endpoints
+- Type-safe implementations
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License.
+
+## 🙋‍♂ Support
+
+For support:
+- Open an issue in the [GitHub repository](https://github.com/AP4549/Agile-Support)
+- Check existing documentation
+- Contact the development team
