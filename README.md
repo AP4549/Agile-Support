@@ -2,6 +2,7 @@
 
 A modern, AI-powered support desk application that combines agile project management with intelligent ticket handling. Built with React, TypeScript, and Ollama integration for AI features.
 
+ ![image](https://github.com/user-attachments/assets/a58b3895-7b3f-4652-a74e-591fab5f2827)
 ## 🌟 Features
 
 ### Dashboard
@@ -61,6 +62,9 @@ A modern, AI-powered support desk application that combines agile project manage
 - Ollama installed locally
 - npm or bun package manager
 
+ 
+
+
 ## 🚀 Getting Started
 
 1. *Clone the repository*
@@ -101,8 +105,7 @@ python app.py
 bash
 # Pull the default model
 ollama pull llama3
-
-# Ensure Ollama is running at http://localhost:11434
+Ensure Ollama is running at http://localhost:11434
 
 
 ## 🔧 Configuration
